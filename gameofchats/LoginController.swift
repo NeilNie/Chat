@@ -61,40 +61,6 @@ class LoginController: UIViewController {
         
     }
     
-    func handleRegister() {
-        guard let email = emailTextField.text, password = passwordTextField.text, name = nameTextField.text else {
-            print("Form is not valid")
-            return
-        }
-        
-        FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user: FIRUser?, error) in
-            
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            guard let uid = user?.uid else {
-                return
-            }
-            
-            //successfully authenticated user
-            let ref = FIRDatabase.database().referenceFromURL("https://gameofchats-762ca.firebaseio.com/")
-            let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                
-                if err != nil {
-                    print(err)
-                    return
-                }
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
-            
-        })
-    }
-    
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
@@ -131,11 +97,15 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "gameofthrones_splash")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .ScaleAspectFill
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        imageView.userInteractionEnabled = true
+        
         return imageView
     }()
     
