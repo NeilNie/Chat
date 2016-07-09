@@ -20,6 +20,7 @@
 		C7A24D941D1E470400011542 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A24D931D1E470400011542 /* LoginController.swift */; };
 		C7A24D961D2069E900011542 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7A24D951D2069E900011542 /* GoogleService-Info.plist */; };
 		C7FAEA911D2F4AB700BD5712 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAEA901D2F4AB700BD5712 /* Message.swift */; };
+		C7FAEA9A1D304A4700BD5712 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FAEA991D304A4700BD5712 /* UserCell.swift */; };
 		E4707AC96679B2AE1D7226F4 /* Pods_gameofchats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB2A4F36B25C9A6CC624F3C /* Pods_gameofchats.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		C7A24D931D1E470400011542 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C7A24D951D2069E900011542 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7FAEA901D2F4AB700BD5712 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C7FAEA991D304A4700BD5712 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		C7A24D7F1D1E45DF00011542 /* gameofchats */ = {
 			isa = PBXGroup;
 			children = (
+				C7FAEA981D304A3800BD5712 /* View */,
 				C7027A731D2C191A007AA9BF /* Helpers */,
 				C7027A151D2457B9007AA9BF /* Model */,
 				C7A24D921D1E46ED00011542 /* Controller */,
@@ -134,6 +137,14 @@
 				C7027A7E1D2EC471007AA9BF /* ChatLogController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C7FAEA981D304A3800BD5712 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7FAEA991D304A4700BD5712 /* UserCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				C7A24D941D1E470400011542 /* LoginController.swift in Sources */,
 				C7027A171D2457C4007AA9BF /* User.swift in Sources */,
 				C7A24D811D1E45DF00011542 /* AppDelegate.swift in Sources */,
+				C7FAEA9A1D304A4700BD5712 /* UserCell.swift in Sources */,
 				C7027A751D2C1924007AA9BF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
