@@ -113,6 +113,27 @@ class MessagesController: UITableViewController {
         return 72
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let message = messages[indexPath.row]
+        
+        guard let chatPartnerId = message.chatPartnerId() else {
+            return
+        }
+        
+        let ref = FIRDatabase.database().reference().child("users").child(chatPartnerId)
+        ref.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            let user = User()
+            user.id = chatPartnerId
+            user.setValuesForKeysWithDictionary(dictionary)
+            self.showChatControllerForUser(user)
+            
+            }, withCancelBlock: nil)
+    }
+    
     func handleNewMessage() {
         let newMessageController = NewMessageController()
         newMessageController.messagesController = self
