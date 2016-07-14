@@ -66,6 +66,8 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 58, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.registerClass(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
@@ -83,11 +85,33 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         let message = messages[indexPath.item]
         cell.textView.text = message.text
         
+        //lets modify the bubbleView's width somehow???
+        
+        cell.bubbleWidthAnchor?.constant = estimateFrameForText(message.text!).width + 32
+        
         return cell
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 80)
+        
+        var height: CGFloat = 80
+        
+        //get estimated height somehow????
+        if let text = messages[indexPath.item].text {
+            height = estimateFrameForText(text).height + 20
+        }
+        
+        return CGSize(width: view.frame.width, height: height)
+    }
+    
+    private func estimateFrameForText(text: String) -> CGRect {
+        let size = CGSize(width: 200, height: 1000)
+        let options = NSStringDrawingOptions.UsesFontLeading.union(.UsesLineFragmentOrigin)
+        return NSString(string: text).boundingRectWithSize(size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(16)], context: nil)
     }
     
     func setupInputComponents() {
@@ -148,6 +172,8 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                 print(error)
                 return
             }
+            
+            self.inputTextField.text = nil
             
             let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(fromId)
             
