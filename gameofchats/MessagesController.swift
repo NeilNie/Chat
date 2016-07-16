@@ -58,10 +58,11 @@ class MessagesController: UITableViewController {
                         })
                     }
                     
-                    //this will crash because of background thread, so lets call this on dispatch_async main thread
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.reloadData()
-                    })
+                    self.timer?.invalidate()
+                    print("we just canceled our timer")
+                    
+                    self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(self.handleReloadTable), userInfo: nil, repeats: false)
+                    print("schedule a table reload in 0.1 sec")
                 }
                 
                 }, withCancelBlock: nil)
@@ -69,31 +70,14 @@ class MessagesController: UITableViewController {
             }, withCancelBlock: nil)
     }
     
-    func observeMessages() {
-        let ref = FIRDatabase.database().reference().child("messages")
-        ref.observeEventType(.ChildAdded, withBlock: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let message = Message()
-                message.setValuesForKeysWithDictionary(dictionary)
-                
-                if let toId = message.toId {
-                    self.messagesDictionary[toId] = message
-                    
-                    self.messages = Array(self.messagesDictionary.values)
-                    self.messages.sortInPlace({ (message1, message2) -> Bool in
-                        
-                        return message1.timestamp?.intValue > message2.timestamp?.intValue
-                    })
-                }
-                
-                //this will crash because of background thread, so lets call this on dispatch_async main thread
-                dispatch_async(dispatch_get_main_queue(), { 
-                    self.tableView.reloadData()
-                })
-            }
-            
-            }, withCancelBlock: nil)
+    var timer: NSTimer?
+    
+    func handleReloadTable() {
+        //this will crash because of background thread, so lets call this on dispatch_async main thread
+        dispatch_async(dispatch_get_main_queue(), {
+            print("we reloaded the table")
+            self.tableView.reloadData()
+        })
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
