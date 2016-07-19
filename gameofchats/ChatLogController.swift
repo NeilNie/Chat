@@ -22,11 +22,11 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     var messages = [Message]()
     
     func observeMessages() {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid, toId = user?.id else {
             return
         }
         
-        let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid)
+        let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid).child(toId)
         userMessagesRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             let messageId = snapshot.key
@@ -41,12 +41,11 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                 //potential of crashing if keys don't match
                 message.setValuesForKeysWithDictionary(dictionary)
                 
-                if message.chatPartnerId() == self.user?.id {
-                    self.messages.append(message)
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.collectionView?.reloadData()
-                    })
-                }
+                //do we need to attempt filtering anymore?
+                self.messages.append(message)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.collectionView?.reloadData()
+                })
                 
                 }, withCancelBlock: nil)
             
@@ -289,12 +288,12 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
             
             self.inputTextField.text = nil
             
-            let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(fromId)
+            let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(fromId).child(toId)
             
             let messageId = childRef.key
             userMessagesRef.updateChildValues([messageId: 1])
             
-            let recipientUserMessagesRef = FIRDatabase.database().reference().child("user-messages").child(toId)
+            let recipientUserMessagesRef = FIRDatabase.database().reference().child("user-messages").child(toId).child(fromId)
             recipientUserMessagesRef.updateChildValues([messageId: 1])
         }
     }
