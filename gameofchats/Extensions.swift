@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 let imageCache = NSCache()
 
@@ -43,5 +44,31 @@ extension UIImageView {
             
         }).resume()
     }
-    
 }
+
+extension FIRDatabase {
+    static func fetchMessageForMessageId(messageId: String, completion: (Message) -> ()) {
+        let messagesRef = FIRDatabase.database().reference().child("messages").child(messageId)
+        messagesRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            let message = Message()
+            //potential of crashing if keys don't match
+            message.setValuesForKeysWithDictionary(dictionary)
+            
+            completion(message)
+            
+            }, withCancelBlock: nil)
+    }
+}
+
+
+
+
+
+
+
+
