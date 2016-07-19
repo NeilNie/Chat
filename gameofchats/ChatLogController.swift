@@ -22,20 +22,33 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     var messages = [Message]()
     
     func observeMessages() {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid, let chatPartnerId = user?.id else {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
             return
         }
         
-        let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid).child(chatPartnerId)
+        let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid)
         userMessagesRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             let messageId = snapshot.key
-            FIRDatabase.fetchMessageForMessageId(messageId, completion: { (message) in
-                self.messages.append(message)
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.collectionView?.reloadData()
-                })
-            })
+            let messagesRef = FIRDatabase.database().reference().child("messages").child(messageId)
+            messagesRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                
+                guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                    return
+                }
+                
+                let message = Message()
+                //potential of crashing if keys don't match
+                message.setValuesForKeysWithDictionary(dictionary)
+                
+                if message.chatPartnerId() == self.user?.id {
+                    self.messages.append(message)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.collectionView?.reloadData()
+                    })
+                }
+                
+                }, withCancelBlock: nil)
             
             }, withCancelBlock: nil)
     }
@@ -276,12 +289,12 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
             
             self.inputTextField.text = nil
             
-            let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(fromId).child(toId)
+            let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(fromId)
             
             let messageId = childRef.key
             userMessagesRef.updateChildValues([messageId: 1])
             
-            let recipientUserMessagesRef = FIRDatabase.database().reference().child("user-messages").child(toId).child(fromId)
+            let recipientUserMessagesRef = FIRDatabase.database().reference().child("user-messages").child(toId)
             recipientUserMessagesRef.updateChildValues([messageId: 1])
         }
     }

@@ -39,20 +39,31 @@ class MessagesController: UITableViewController {
         let ref = FIRDatabase.database().reference().child("user-messages").child(uid)
         ref.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
-            let chatPartnerId = snapshot.key
-            FIRDatabase.database().reference().child("user-messages").child(uid).child(chatPartnerId).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            let messageId = snapshot.key
+            let messagesReference = FIRDatabase.database().reference().child("messages").child(messageId)
+            
+            messagesReference.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 
-                let messageId = snapshot.key
-                FIRDatabase.fetchMessageForMessageId(messageId, completion: { (message) in
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let message = Message()
+                    message.setValuesForKeysWithDictionary(dictionary)
                     
-                    guard let chatPartnerId = message.chatPartnerId() else {
-                        return
+                    if let chatPartnerId = message.chatPartnerId() {
+                        self.messagesDictionary[chatPartnerId] = message
+                        
+                        self.messages = Array(self.messagesDictionary.values)
+                        self.messages.sortInPlace({ (message1, message2) -> Bool in
+                            
+                            return message1.timestamp?.intValue > message2.timestamp?.intValue
+                        })
                     }
                     
-                    self.messagesDictionary[chatPartnerId] = message
+                    self.timer?.invalidate()
+                    print("we just canceled our timer")
                     
-                    self.attemptReloadOfTable()
-                })
+                    self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(self.handleReloadTable), userInfo: nil, repeats: false)
+                    print("schedule a table reload in 0.1 sec")
+                }
                 
                 }, withCancelBlock: nil)
             
@@ -61,19 +72,7 @@ class MessagesController: UITableViewController {
     
     var timer: NSTimer?
     
-    private func attemptReloadOfTable() {
-        self.timer?.invalidate()
-        
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(self.handleReloadTable), userInfo: nil, repeats: false)
-    }
-    
     func handleReloadTable() {
-        self.messages = Array(self.messagesDictionary.values)
-        self.messages.sortInPlace({ (message1, message2) -> Bool in
-            
-            return message1.timestamp?.intValue > message2.timestamp?.intValue
-        })
-        
         //this will crash because of background thread, so lets call this on dispatch_async main thread
         dispatch_async(dispatch_get_main_queue(), {
             print("we reloaded the table")
