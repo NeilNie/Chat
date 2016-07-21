@@ -34,8 +34,6 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
             
             if let profileImage = self.profileImageView.image, uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
             
-//            if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!) {
-            
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     
                     if error != nil {
