@@ -36,6 +36,7 @@ class LoginController: UIViewController {
     }()
     
     func handleLoginRegister() {
+        
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             handleLogin()
         } else {
@@ -44,7 +45,8 @@ class LoginController: UIViewController {
     }
     
     func handleLogin() {
-        guard let email = emailTextField.text, password = passwordTextField.text else {
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
             print("Form is not valid")
             return
         }
@@ -254,11 +256,3 @@ extension UIColor {
     }
     
 }
-
-
-
-
-
-
-
-
