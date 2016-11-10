@@ -60,7 +60,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         super.viewDidLoad()
         
         collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
-//        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        //        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.registerClass(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
@@ -132,11 +132,12 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     }
     
     private func thumbnailImageForFileUrl(fileUrl: NSURL) -> UIImage? {
+        
         let asset = AVAsset(URL: fileUrl)
         let imageGenerator = AVAssetImageGenerator(asset: asset)
         
         do {
-        
+            
             let thumbnailCGImage = try imageGenerator.copyCGImageAtTime(CMTimeMake(1, 60), actualTime: nil)
             return UIImage(CGImage: thumbnailCGImage)
             
@@ -201,9 +202,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     func setupKeyboardObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIKeyboardDidShowNotification, object: nil)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+//                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
 //        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+//                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func handleKeyboardDidShow() {
@@ -224,7 +225,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         let keyboardDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue
         
         containerViewBottomAnchor?.constant = -keyboardFrame!.height
-        UIView.animateWithDuration(keyboardDuration!) { 
+        UIView.animateWithDuration(keyboardDuration!) {
             self.view.layoutIfNeeded()
         }
     }
@@ -418,7 +419,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                 zoomingImageView.center = keyWindow.center
                 
                 }, completion: { (completed) in
-//                    do nothing
+                    //                    do nothing
             })
             
         }
@@ -443,16 +444,4 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

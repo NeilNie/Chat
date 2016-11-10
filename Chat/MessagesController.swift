@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class MessagesController: UITableViewController {
-
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class MessagesController: UITableViewController {
         
         tableView.registerClass(UserCell.self, forCellReuseIdentifier: cellId)
         
-//        observeMessages()
+        //        observeMessages()
         
         tableView.allowsMultipleSelectionDuringEditing = true
     }
@@ -53,9 +53,9 @@ class MessagesController: UITableViewController {
                 self.messagesDictionary.removeValueForKey(chatPartnerId)
                 self.attemptReloadOfTable()
                 
-//                //this is one way of updating the table, but its actually not that safe..
-//                self.messages.removeAtIndex(indexPath.row)
-//                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                //                //this is one way of updating the table, but its actually not that safe..
+                self.messages.removeAtIndex(indexPath.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
                 
             })
         }
@@ -90,7 +90,7 @@ class MessagesController: UITableViewController {
             self.attemptReloadOfTable()
             
             }, withCancelBlock: nil)
-    }                            
+    }
     
     private func fetchMessageWithMessageId(messageId: String) {
         let messagesReference = FIRDatabase.database().reference().child("messages").child(messageId)
@@ -193,7 +193,7 @@ class MessagesController: UITableViewController {
         FIRDatabase.database().reference().child("users").child(uid).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-//                self.navigationItem.title = dictionary["name"] as? String
+                //                self.navigationItem.title = dictionary["name"] as? String
                 
                 let user = User()
                 user.setValuesForKeysWithDictionary(dictionary)
@@ -212,7 +212,7 @@ class MessagesController: UITableViewController {
         
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-//        titleView.backgroundColor = UIColor.redColor()
+        //        titleView.backgroundColor = UIColor.redColor()
         
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -252,7 +252,7 @@ class MessagesController: UITableViewController {
         
         self.navigationItem.titleView = titleView
         
-//        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
+        //        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
     }
     
     func showChatControllerForUser(user: User) {
@@ -273,6 +273,6 @@ class MessagesController: UITableViewController {
         loginController.messagesController = self
         presentViewController(loginController, animated: true, completion: nil)
     }
-
+    
 }
 

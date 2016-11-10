@@ -108,7 +108,7 @@ class LoginController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "gameofthrones_splash")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .ScaleAspectFit
         
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
         imageView.userInteractionEnabled = true
@@ -153,12 +153,10 @@ class LoginController: UIViewController {
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
-        view.addSubview(profileImageView)
         view.addSubview(loginRegisterSegmentedControl)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
-        setupProfileImageView()
         setupLoginRegisterSegmentedControl()
     }
     
@@ -168,14 +166,6 @@ class LoginController: UIViewController {
         loginRegisterSegmentedControl.bottomAnchor.constraintEqualToAnchor(inputsContainerView.topAnchor, constant: -12).active = true
         loginRegisterSegmentedControl.widthAnchor.constraintEqualToAnchor(inputsContainerView.widthAnchor, multiplier: 1).active = true
         loginRegisterSegmentedControl.heightAnchor.constraintEqualToConstant(36).active = true
-    }
-    
-    func setupProfileImageView() {
-        //need x, y, width, height constraints
-        profileImageView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
-        profileImageView.bottomAnchor.constraintEqualToAnchor(loginRegisterSegmentedControl.topAnchor, constant: -12).active = true
-        profileImageView.widthAnchor.constraintEqualToConstant(150).active = true
-        profileImageView.heightAnchor.constraintEqualToConstant(150).active = true
     }
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
