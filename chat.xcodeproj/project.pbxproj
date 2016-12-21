@@ -15,7 +15,6 @@
 		28E1F0021DD3F467008BF413 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF11DD3F466008BF413 /* Extensions.swift */; };
 		28E1F0031DD3F467008BF413 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E1EFF21DD3F466008BF413 /* GoogleService-Info.plist */; };
 		28E1F0051DD3F467008BF413 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF41DD3F466008BF413 /* LoginController.swift */; };
-		28E1F0061DD3F467008BF413 /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF51DD3F466008BF413 /* LoginController+handlers.swift */; };
 		28E1F0071DD3F467008BF413 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF61DD3F466008BF413 /* Message.swift */; };
 		28E1F0081DD3F467008BF413 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF71DD3F467008BF413 /* MessagesController.swift */; };
 		28E1F0091DD3F467008BF413 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFF81DD3F467008BF413 /* NewMessageController.swift */; };
@@ -37,7 +36,6 @@
 		28E1EFF21DD3F466008BF413 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Chat/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		28E1EFF31DD3F466008BF413 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Chat/Info.plist; sourceTree = SOURCE_ROOT; };
 		28E1EFF41DD3F466008BF413 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Chat/LoginController.swift; sourceTree = SOURCE_ROOT; };
-		28E1EFF51DD3F466008BF413 /* LoginController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LoginController+handlers.swift"; path = "Chat/LoginController+handlers.swift"; sourceTree = SOURCE_ROOT; };
 		28E1EFF61DD3F466008BF413 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Chat/Message.swift; sourceTree = SOURCE_ROOT; };
 		28E1EFF71DD3F467008BF413 /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesController.swift; path = Chat/MessagesController.swift; sourceTree = SOURCE_ROOT; };
 		28E1EFF81DD3F467008BF413 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMessageController.swift; path = Chat/NewMessageController.swift; sourceTree = SOURCE_ROOT; };
@@ -108,7 +106,6 @@
 				28E1EFF01DD3F466008BF413 /* ChatMessageCell.swift */,
 				28E1EFF11DD3F466008BF413 /* Extensions.swift */,
 				28E1EFEE1DD3F466008BF413 /* ChatInputContainerView.swift */,
-				28E1EFF51DD3F466008BF413 /* LoginController+handlers.swift */,
 				28E1EFF61DD3F466008BF413 /* Message.swift */,
 				28E1EFFA1DD3F467008BF413 /* UserCell.swift */,
 				28E1EFF91DD3F467008BF413 /* User.swift */,
@@ -293,7 +290,6 @@
 				28E1F0051DD3F467008BF413 /* LoginController.swift in Sources */,
 				28E1F0001DD3F467008BF413 /* ChatLogController.swift in Sources */,
 				28E1F0011DD3F467008BF413 /* ChatMessageCell.swift in Sources */,
-				28E1F0061DD3F467008BF413 /* LoginController+handlers.swift in Sources */,
 				28E1F0071DD3F467008BF413 /* Message.swift in Sources */,
 				28E1F0091DD3F467008BF413 /* NewMessageController.swift in Sources */,
 				28E1EFFB1DD3F467008BF413 /* AppDelegate.swift in Sources */,

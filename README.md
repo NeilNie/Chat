@@ -1,15 +1,21 @@
 # Chat
 Swift texting app with Firebase server. 
 
-Features:
+##Features:
+- Email login authentication.
+- Google & Facebook login & authentication.
+- Realtime texting, powered by Firebase
+- Send & recieve images. 
+- Update user information, including profile images. 
 
-Highlights:
+##Get Start
+Clone or download the project. Make you that you have a firebase account and update Google info.plist. This repository is also a great resource for starting a firebase project. 
 
-Credit:
-http://letsbuildthatapp.com
-http://firebase.google.com
-
-Future plans:
+##Future plans:
 - WatchKit extension
 - voice call and video call
-- Timeline || stories
+- Timeline or stories
+
+##Credit:
+http://letsbuildthatapp.com <br>
+http://firebase.google.com
