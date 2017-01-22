@@ -75,6 +75,7 @@
 		3DFFB1F83EE901E185EC4577EA162B48 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		46E3E70657BCA07A56E20F28FB80F128 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		4C88372C05B80FC3BA4F527C99830F4C /* Pods-chat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-chat-dummy.m"; sourceTree = "<group>"; };
+		4FC4A50DCF8DF2BBCAE204B55B102C20 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		502A4CAFD8C0BC1E239AF76A18805089 /* GTMSessionUploadFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionUploadFetcher.h; path = Source/GTMSessionUploadFetcher.h; sourceTree = "<group>"; };
 		532B13E8AB67E0841AA2FF6A439EC5BF /* GTMSessionUploadFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionUploadFetcher.m; path = Source/GTMSessionUploadFetcher.m; sourceTree = "<group>"; };
 		5ABDC09F3BF8AFF77FB73CE188C263AA /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		8D127F384EE484997181AD9F51F860BA /* GTMSessionFetcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMSessionFetcher-dummy.m"; sourceTree = "<group>"; };
 		9060858A7F0A8DDBE92E3B6735282623 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A8F3ECBB244D72092881B483F0144BEC /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		A93382BF08C54C88D3BA4B48762AFE03 /* Pods-chat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-chat-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B2C81B3EC0753AB0F76C0FC3ECA9CB6D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C34C93E9DD752AD4D18EE16FE1621E /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugSelectorValidation.h; path = DebugUtils/GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		37DB5E1AF78CB14DFAD5C39D14AD246B /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
-				68559F65BA8072FBAF01D94100346B2D /* Frameworks */,
+				A143C2C5C2C84A6420D056C2D62023CB /* Frameworks */,
 			);
 			name = FirebaseCore;
 			path = FirebaseCore;
@@ -253,14 +253,6 @@
 			);
 			name = GoogleInterchangeUtilities;
 			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		68559F65BA8072FBAF01D94100346B2D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A8F3ECBB244D72092881B483F0144BEC /* FirebaseCore.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6B84AF61156C77764ADE61D7855CFC6A /* Support Files */ = {
@@ -378,6 +370,14 @@
 			);
 			name = "Pods-chat";
 			path = "Target Support Files/Pods-chat";
+			sourceTree = "<group>";
+		};
+		A143C2C5C2C84A6420D056C2D62023CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FC4A50DCF8DF2BBCAE204B55B102C20 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A900F918C505744F754C0B5DB86E7731 /* Frameworks */ = {
