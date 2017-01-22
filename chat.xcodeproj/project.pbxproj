@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		284C242B1E351A86003EE508 /* profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 284C242A1E351A86003EE508 /* profile_image.png */; };
 		28E1EFFB1DD3F467008BF413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFE71DD3F466008BF413 /* AppDelegate.swift */; };
 		28E1EFFC1DD3F467008BF413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E1EFE81DD3F466008BF413 /* Assets.xcassets */; };
 		28E1EFFF1DD3F467008BF413 /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFEE1DD3F466008BF413 /* ChatInputContainerView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		00C49EC01D78E425005BBD9E /* chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chat.entitlements; sourceTree = "<group>"; };
+		284C242A1E351A86003EE508 /* profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_image.png; sourceTree = SOURCE_ROOT; };
 		28E1EFE71DD3F466008BF413 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chat/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		28E1EFE81DD3F466008BF413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chat/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		28E1EFEE1DD3F466008BF413 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatInputContainerView.swift; path = Chat/ChatInputContainerView.swift; sourceTree = SOURCE_ROOT; };
@@ -72,6 +74,7 @@
 		28E1F00C1DD3F49A008BF413 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				284C242A1E351A86003EE508 /* profile_image.png */,
 				28E1EFE71DD3F466008BF413 /* AppDelegate.swift */,
 				28E1EFE81DD3F466008BF413 /* Assets.xcassets */,
 				28E1EFF21DD3F466008BF413 /* GoogleService-Info.plist */,
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E1F0031DD3F467008BF413 /* GoogleService-Info.plist in Resources */,
+				284C242B1E351A86003EE508 /* profile_image.png in Resources */,
 				28E1F0121DD3F4B4008BF413 /* Main.storyboard in Resources */,
 				28E1F0111DD3F4B4008BF413 /* LaunchScreen.storyboard in Resources */,
 				28E1EFFC1DD3F467008BF413 /* Assets.xcassets in Resources */,
