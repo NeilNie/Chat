@@ -13,34 +13,14 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     var messagesController: MessagesController?
     
-    let inputsContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 5
-        view.layer.masksToBounds = true
-        return view
-    }()
-    
-    lazy var loginRegisterButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("Register", for: UIControlState())
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: UIControlState())
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        
-        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
-        
-        return button
-    }()
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.nameTextField.resignFirstResponder();
         self.emailTextField.resignFirstResponder();
         self.passwordTextField.resignFirstResponder();
         
     }
+    
+    //MARK: - Instance Method
     
     func handleRegister() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
@@ -51,8 +31,10 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
             
             if error != nil {
-                //add UIAlertView Here
-                print(error!)
+                let alert = UIAlertController.init(title: "oops", message: error?.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil);
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             
@@ -95,8 +77,8 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                 return
             }
             
-            //            self.messagesController?.fetchUserAndSetupNavBarTitle()
-            //            self.messagesController?.navigationItem.title = values["name"] as? String
+            self.messagesController?.fetchUserAndSetupNavBarTitle()
+            self.messagesController?.navigationItem.title = values["name"] as? String
             let user = User()
             //this setter potentially crashes if keys don't match
             user.setValuesForKeys(values)
@@ -122,7 +104,6 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             selectedImageFromPicker = editedImage
         } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            
             selectedImageFromPicker = originalImage
         }
         
@@ -131,14 +112,11 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
         
         dismiss(animated: true, completion: nil)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("canceled picker")
         dismiss(animated: true, completion: nil)
     }
-    
     
     func handleLoginRegister() {
         
@@ -162,16 +140,14 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                 print(error!)
                 return
             }
-            
-            //successfully logged in our user
-            
             self.messagesController?.fetchUserAndSetupNavBarTitle()
             
             self.dismiss(animated: true, completion: nil)
-            
         })
         
     }
+    
+    //MARK: - View Objects
     
     let nameTextField: UITextField = {
         let tf = UITextField()
@@ -211,7 +187,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gameofthrones_splash")
+        imageView.image = UIImage(named: "profile_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         
@@ -250,21 +226,29 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
         passwordTextFieldHeightAnchor?.isActive = true
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
-        
-        view.addSubview(inputsContainerView)
-        view.addSubview(loginRegisterButton)
-        view.addSubview(loginRegisterSegmentedControl)
-        
-        setupInputsContainerView()
-        setupLoginRegisterButton()
-        setupLoginRegisterSegmentedControl()
-    }
     
+    let inputsContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    lazy var loginRegisterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.setTitle("Register", for: UIControlState())
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
+        
+        return button
+    }()
+
     func setupLoginRegisterSegmentedControl() {
         //need x, y, width, height constraints
         loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -272,6 +256,8 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         loginRegisterSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor, multiplier: 1).isActive = true
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
+    
+    //MARK: - Anchor & View setup
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
     var nameTextFieldHeightAnchor: NSLayoutConstraint?
@@ -341,6 +327,22 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
+    }
+    
+    //MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        
+        view.addSubview(inputsContainerView)
+        view.addSubview(loginRegisterButton)
+        view.addSubview(loginRegisterSegmentedControl)
+        
+        setupInputsContainerView()
+        setupLoginRegisterButton()
+        setupLoginRegisterSegmentedControl()
     }
 }
 
