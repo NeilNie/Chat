@@ -9,34 +9,34 @@
 import UIKit
 import Firebase
 
-let imageCache = NSCache()
+let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
     
-    func loadImageUsingCacheWithUrlString(urlString: String) {
+    func loadImageUsingCacheWithUrlString(_ urlString: String) {
         
         self.image = nil
         
         //check cache for image first
-        if let cachedImage = imageCache.objectForKey(urlString) as? UIImage {
+        if let cachedImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = cachedImage
             return
         }
         
         //otherwise fire off a new download
-        let url = NSURL(string: urlString)
-        NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) in
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
             
             //download hit an error so lets return out
             if error != nil {
-                print(error)
+                print(error!)
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
                 if let downloadedImage = UIImage(data: data!) {
-                    imageCache.setObject(downloadedImage, forKey: urlString)
+                    imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
                     
                     self.image = downloadedImage
                 }
@@ -45,10 +45,3 @@ extension UIImageView {
         }).resume()
     }
 }
-
-
-
-
-
-
-
