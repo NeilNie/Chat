@@ -12,7 +12,7 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
     
     weak var chatLogController: ChatLogController? {
         didSet {
-            sendButton.addTarget(chatLogController, action: #selector(ChatLogController.handleSend), forControlEvents: .TouchUpInside)
+            sendButton.addTarget(chatLogController, action: #selector(ChatLogController.handleSend), for: .touchUpInside)
             uploadImageView.addGestureRecognizer(UITapGestureRecognizer(target: chatLogController, action: #selector(ChatLogController.handleUploadTap)))
         }
     }
@@ -27,58 +27,58 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
     
     let uploadImageView: UIImageView = {
         let uploadImageView = UIImageView()
-        uploadImageView.userInteractionEnabled = true
+        uploadImageView.isUserInteractionEnabled = true
         uploadImageView.image = UIImage(named: "upload_image_icon")
         uploadImageView.translatesAutoresizingMaskIntoConstraints = false
         return uploadImageView
     }()
     
-    let sendButton = UIButton(type: .System)
+    let sendButton = UIButton(type: .system)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .whiteColor()
+        backgroundColor = .white
         
         addSubview(uploadImageView)
         //x,y,w,h
-        uploadImageView.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-        uploadImageView.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
-        uploadImageView.widthAnchor.constraintEqualToConstant(44).active = true
-        uploadImageView.heightAnchor.constraintEqualToConstant(44).active = true
+        uploadImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        uploadImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        uploadImageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        uploadImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         
-        sendButton.setTitle("Send", forState: .Normal)
+        sendButton.setTitle("Send", for: UIControlState())
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         
         //what is handleSend?
         
         addSubview(sendButton)
         //x,y,w,h
-        sendButton.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
-        sendButton.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
-        sendButton.widthAnchor.constraintEqualToConstant(80).active = true
-        sendButton.heightAnchor.constraintEqualToAnchor(heightAnchor).active = true
+        sendButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        sendButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        sendButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        sendButton.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
         addSubview(self.inputTextField)
         //x,y,w,h
-        self.inputTextField.leftAnchor.constraintEqualToAnchor(uploadImageView.rightAnchor, constant: 8).active = true
-        self.inputTextField.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
-        self.inputTextField.rightAnchor.constraintEqualToAnchor(sendButton.leftAnchor).active = true
-        self.inputTextField.heightAnchor.constraintEqualToAnchor(heightAnchor).active = true
+        self.inputTextField.leftAnchor.constraint(equalTo: uploadImageView.rightAnchor, constant: 8).isActive = true
+        self.inputTextField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        self.inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
+        self.inputTextField.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
         let separatorLineView = UIView()
         separatorLineView.backgroundColor = UIColor(r: 220, g: 220, b: 220)
         separatorLineView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(separatorLineView)
         //x,y,w,h
-        separatorLineView.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-        separatorLineView.topAnchor.constraintEqualToAnchor(topAnchor).active = true
-        separatorLineView.widthAnchor.constraintEqualToAnchor(widthAnchor).active = true
-        separatorLineView.heightAnchor.constraintEqualToConstant(1).active = true
+        separatorLineView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        separatorLineView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        separatorLineView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        separatorLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         chatLogController?.handleSend()
         return true
     }

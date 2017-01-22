@@ -16,20 +16,20 @@ class ChatMessageCell: UICollectionViewCell {
     var chatLogController: ChatLogController?
     
     let activityIndicatorView: UIActivityIndicatorView = {
-        let aiv = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        let aiv = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         aiv.translatesAutoresizingMaskIntoConstraints = false
         aiv.hidesWhenStopped = true
         return aiv
     }()
     
     lazy var playButton: UIButton = {
-        let button = UIButton(type: .System)
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(named: "play")
-        button.tintColor = UIColor.whiteColor()
-        button.setImage(image, forState: .Normal)
+        button.tintColor = UIColor.white
+        button.setImage(image, for: UIControlState())
         
-        button.addTarget(self, action: #selector(handlePlay), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(handlePlay), for: .touchUpInside)
         
         return button
     }()
@@ -38,8 +38,8 @@ class ChatMessageCell: UICollectionViewCell {
     var player: AVPlayer?
     
     func handlePlay() {
-        if let videoUrlString = message?.videoUrl, url = NSURL(string: videoUrlString) {
-            player = AVPlayer(URL: url)
+        if let videoUrlString = message?.videoUrl, let url = URL(string: videoUrlString) {
+            player = AVPlayer(url: url)
             
             playerLayer = AVPlayerLayer(player: player)
             playerLayer?.frame = bubbleView.bounds
@@ -47,7 +47,7 @@ class ChatMessageCell: UICollectionViewCell {
             
             player?.play()
             activityIndicatorView.startAnimating()
-            playButton.hidden = true
+            playButton.isHidden = true
             
             print("Attempting to play video......???")
         }
@@ -63,11 +63,11 @@ class ChatMessageCell: UICollectionViewCell {
     let textView: UITextView = {
         let tv = UITextView()
         tv.text = "SAMPLE TEXT FOR NOW"
-        tv.font = UIFont.systemFontOfSize(16)
+        tv.font = UIFont.systemFont(ofSize: 16)
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor.clearColor()
-        tv.textColor = .whiteColor()
-        tv.editable = false
+        tv.backgroundColor = UIColor.clear
+        tv.textColor = .white
+        tv.isEditable = false
         return tv
     }()
     
@@ -87,7 +87,7 @@ class ChatMessageCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -96,14 +96,14 @@ class ChatMessageCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .ScaleAspectFill
-        imageView.userInteractionEnabled = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleZoomTap)))
         
         return imageView
     }()
     
-    func handleZoomTap(tapGesture: UITapGestureRecognizer) {
+    func handleZoomTap(_ tapGesture: UITapGestureRecognizer) {
         if message?.videoUrl != nil {
             return
         }
@@ -126,59 +126,59 @@ class ChatMessageCell: UICollectionViewCell {
         addSubview(profileImageView)
         
         bubbleView.addSubview(messageImageView)
-        messageImageView.leftAnchor.constraintEqualToAnchor(bubbleView.leftAnchor).active = true
-        messageImageView.topAnchor.constraintEqualToAnchor(bubbleView.topAnchor).active = true
-        messageImageView.widthAnchor.constraintEqualToAnchor(bubbleView.widthAnchor).active = true
-        messageImageView.heightAnchor.constraintEqualToAnchor(bubbleView.heightAnchor).active = true
+        messageImageView.leftAnchor.constraint(equalTo: bubbleView.leftAnchor).isActive = true
+        messageImageView.topAnchor.constraint(equalTo: bubbleView.topAnchor).isActive = true
+        messageImageView.widthAnchor.constraint(equalTo: bubbleView.widthAnchor).isActive = true
+        messageImageView.heightAnchor.constraint(equalTo: bubbleView.heightAnchor).isActive = true
         
         bubbleView.addSubview(playButton)
         //x,y,w,h
-        playButton.centerXAnchor.constraintEqualToAnchor(bubbleView.centerXAnchor).active = true
-        playButton.centerYAnchor.constraintEqualToAnchor(bubbleView.centerYAnchor).active = true
-        playButton.widthAnchor.constraintEqualToConstant(50).active = true
-        playButton.heightAnchor.constraintEqualToConstant(50).active = true
+        playButton.centerXAnchor.constraint(equalTo: bubbleView.centerXAnchor).isActive = true
+        playButton.centerYAnchor.constraint(equalTo: bubbleView.centerYAnchor).isActive = true
+        playButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        playButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         bubbleView.addSubview(activityIndicatorView)
         //x,y,w,h
-        activityIndicatorView.centerXAnchor.constraintEqualToAnchor(bubbleView.centerXAnchor).active = true
-        activityIndicatorView.centerYAnchor.constraintEqualToAnchor(bubbleView.centerYAnchor).active = true
-        activityIndicatorView.widthAnchor.constraintEqualToConstant(50).active = true
-        activityIndicatorView.heightAnchor.constraintEqualToConstant(50).active = true
+        activityIndicatorView.centerXAnchor.constraint(equalTo: bubbleView.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: bubbleView.centerYAnchor).isActive = true
+        activityIndicatorView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        activityIndicatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         //x,y,w,h
-        profileImageView.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 8).active = true
-        profileImageView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
-        profileImageView.widthAnchor.constraintEqualToConstant(32).active = true
-        profileImageView.heightAnchor.constraintEqualToConstant(32).active = true
+        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
         //x,y,w,h
         
-            bubbleViewRightAnchor = bubbleView.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -8)
+            bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8)
             
-        bubbleViewRightAnchor?.active = true
+        bubbleViewRightAnchor?.isActive = true
         
-        bubbleViewLeftAnchor = bubbleView.leftAnchor.constraintEqualToAnchor(profileImageView.rightAnchor, constant: 8)
+        bubbleViewLeftAnchor = bubbleView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8)
 //        bubbleViewLeftAnchor?.active = false
         
         
-        bubbleView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
+        bubbleView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
-        bubbleWidthAnchor = bubbleView.widthAnchor.constraintEqualToConstant(200)
-        bubbleWidthAnchor?.active = true
+        bubbleWidthAnchor = bubbleView.widthAnchor.constraint(equalToConstant: 200)
+        bubbleWidthAnchor?.isActive = true
         
-        bubbleView.heightAnchor.constraintEqualToAnchor(self.heightAnchor).active = true
+        bubbleView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         
         //ios 9 constraints
         //x,y,w,h
 //        textView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
-        textView.leftAnchor.constraintEqualToAnchor(bubbleView.leftAnchor, constant: 8).active = true
-        textView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
+        textView.leftAnchor.constraint(equalTo: bubbleView.leftAnchor, constant: 8).isActive = true
+        textView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
-        textView.rightAnchor.constraintEqualToAnchor(bubbleView.rightAnchor).active = true
+        textView.rightAnchor.constraint(equalTo: bubbleView.rightAnchor).isActive = true
 //        textView.widthAnchor.constraintEqualToConstant(200).active = true
         
         
-        textView.heightAnchor.constraintEqualToAnchor(self.heightAnchor).active = true
+        textView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
