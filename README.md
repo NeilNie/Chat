@@ -3,15 +3,15 @@ Swift texting app with Firebase server.
 
 ##Introduction:
 Clone/download this app. First register as a user. <br>
-![image](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.53%20PM.png =400x)
+<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.53%20PM.png" height="400" />
 
 Then, you can start a conversation by clicking on the top right logo on the navigation bar. <br>
-![image](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.58%20PM.png =400x)
+<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.58%20PM.png" height="400" />
 
 You will see the name of the other user. By click on the name, you can begin texting.<br>
-![image](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.35%20PM.png =400x)
+<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.35%20PM.png" height="400" />
 
-![image](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.01.13%20PM.png =400x)
+<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.01.13%20PM.png =400x" height="400" />
 
 ##Features:
 - Email login authentication.
