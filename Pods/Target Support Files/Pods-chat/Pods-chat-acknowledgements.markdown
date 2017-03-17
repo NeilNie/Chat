@@ -3,31 +3,31 @@ This application makes use of the following third party libraries:
 
 ## Firebase
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseAnalytics
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseAuth
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseCore
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseDatabase
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseInstanceID
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## FirebaseStorage
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## GTMSessionFetcher
 
@@ -237,15 +237,7 @@ Copyright 2016 Google
 
 ## Google-Mobile-Ads-SDK
 
-Copyright 2016 Google
-
-## GoogleInterchangeUtilities
-
-Copyright 2016 Google
-
-## GoogleSymbolUtilities
-
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## GoogleToolboxForMac
 
