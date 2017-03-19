@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -49,8 +50,6 @@ class MessagesController: UITableViewController {
         
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
-        //        observeMessages()
-        
         tableView.allowsMultipleSelectionDuringEditing = true
     }
     
@@ -77,7 +76,7 @@ class MessagesController: UITableViewController {
                 self.messagesDictionary.removeValue(forKey: chatPartnerId)
                 self.attemptReloadOfTable()
                 
-                //                //this is one way of updating the table, but its actually not that safe..
+                //this is one way of updating the table, but its actually not that safe..
                 self.messages.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 

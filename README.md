@@ -1,23 +1,20 @@
-# Chat
-Swift texting app with Firebase server. 
+# Chat 💬 ![test](https://github.com/favicon.ico)
+Swift texting app 📱 with Firebase server. 
 
-##Introduction:
+## Introduction:
 
-Clone/download this app. First register as a user. <br>
+Clone/download this app. First register as a user.
 
-<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.53%20PM.png" height="600" />
+Register             |  Begin a chat
+:-------------------------:|:-------------------------:
+![](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.53%20PM.png)  |  ![](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.58%20PM.png)
 
-Then, you can start a conversation by clicking on the top right logo on the navigation bar. <br>
+You can start a conversation by clicking on the top right logo on the navigation bar.
+You will see the name of the other user. By click on the name, you can begin texting.
 
-<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.58%20PM.png" height="600" />
+![alt-text-1](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.35%20PM.png "title-1") ![alt-text-2](https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.01.13%20PM.png "title-2")
 
-You will see the name of the other user. By click on the name, you can begin texting.<br>
-
-<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.00.35%20PM.png" height="600" />
-
-<img src="https://github.com/NeilNie/Chat/blob/master/Simulator%20Screen%20Shot%20Jan%2022%2C%202017%2C%2012.01.13%20PM.png" height="600" />
-
-##Features:
+## Features:
 
 - Email login authentication.
 - Google & Facebook login & authentication.
@@ -25,16 +22,19 @@ You will see the name of the other user. By click on the name, you can begin tex
 - Send & recieve images. 
 - Update user information, including profile images. 
 
-##Build it together
+###Firebase
+The app is built with Firebase, a mobile backend solution by Google. My first messenging app used Parse, as many of you know, parse is a thing of the past. In fact, Firebase is fast and easy to implement. If you decide to use or develop this app, I would highly recommend you to read Firebase's [documentation](https://firebase.google.com/docs/ios/setup) and also create a Firebase account. 
+
+## Build it together
 
 Clone or download the project. Make you that you have a firebase account and update Google info.plist. This repository is also a great resource for starting a firebase project. 
 
 For more details, feel free to email me at appledeveloper.neil@gmail.com.
 
-##Future plans:
-- Push notifications with Parse server. 
-- WatchKit extension
-- voice call and video call
+## Future plans:
+- Push notifications with Parse server. (my own)
+- WatchKit extension ⌚️
+- voice call and video call 📞📲
 
 ##Credit:
 http://letsbuildthatapp.com <br>
