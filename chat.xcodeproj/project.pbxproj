@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		284C242B1E351A86003EE508 /* profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 284C242A1E351A86003EE508 /* profile_image.png */; };
-		28857A771E7ED40800134ABD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28857A751E7ED40800134ABD /* Interface.storyboard */; };
-		28857A791E7ED40800134ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28857A781E7ED40800134ABD /* Assets.xcassets */; };
-		28857A801E7ED40900134ABD /* Chat Apple Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28857A7F1E7ED40800134ABD /* Chat Apple Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		28857A881E7ED40900134ABD /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28857A871E7ED40900134ABD /* InterfaceController.m */; };
-		28857A8B1E7ED40900134ABD /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28857A8A1E7ED40900134ABD /* ExtensionDelegate.m */; };
-		28857A8E1E7ED40900134ABD /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28857A8D1E7ED40900134ABD /* NotificationController.m */; };
-		28857A901E7ED40900134ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28857A8F1E7ED40900134ABD /* Assets.xcassets */; };
-		28857A941E7ED40900134ABD /* Chat Apple Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 28857A731E7ED40800134ABD /* Chat Apple Watch.app */; };
+		28857AA31E7ED48E00134ABD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28857AA11E7ED48E00134ABD /* Interface.storyboard */; };
+		28857AA51E7ED48E00134ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28857AA41E7ED48E00134ABD /* Assets.xcassets */; };
+		28857AAC1E7ED48F00134ABD /* Chat Apple Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28857AAB1E7ED48E00134ABD /* Chat Apple Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		28857AB31E7ED48F00134ABD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28857AB21E7ED48F00134ABD /* InterfaceController.swift */; };
+		28857AB51E7ED48F00134ABD /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28857AB41E7ED48F00134ABD /* ExtensionDelegate.swift */; };
+		28857AB71E7ED48F00134ABD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28857AB61E7ED48F00134ABD /* NotificationController.swift */; };
+		28857AB91E7ED48F00134ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28857AB81E7ED48F00134ABD /* Assets.xcassets */; };
+		28857ABD1E7ED48F00134ABD /* Chat Apple Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 28857A9F1E7ED48E00134ABD /* Chat Apple Watch.app */; };
 		28E1EFFB1DD3F467008BF413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFE71DD3F466008BF413 /* AppDelegate.swift */; };
 		28E1EFFC1DD3F467008BF413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E1EFE81DD3F466008BF413 /* Assets.xcassets */; };
 		28E1EFFF1DD3F467008BF413 /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1EFEE1DD3F466008BF413 /* ChatInputContainerView.swift */; };
@@ -35,43 +35,43 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		28857A811E7ED40900134ABD /* PBXContainerItemProxy */ = {
+		28857AAD1E7ED48F00134ABD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C7A24D751D1E45DF00011542 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 28857A7E1E7ED40800134ABD;
+			remoteGlobalIDString = 28857AAA1E7ED48E00134ABD;
 			remoteInfo = "Chat Apple Watch Extension";
 		};
-		28857A921E7ED40900134ABD /* PBXContainerItemProxy */ = {
+		28857ABB1E7ED48F00134ABD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C7A24D751D1E45DF00011542 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 28857A721E7ED40800134ABD;
+			remoteGlobalIDString = 28857A9E1E7ED48E00134ABD;
 			remoteInfo = "Chat Apple Watch";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		28857A9A1E7ED40900134ABD /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				28857A801E7ED40900134ABD /* Chat Apple Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		28857A9C1E7ED40900134ABD /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				28857A941E7ED40900134ABD /* Chat Apple Watch.app in Embed Watch Content */,
+				28857ABD1E7ED48F00134ABD /* Chat Apple Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28857AC11E7ED48F00134ABD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				28857AAC1E7ED48F00134ABD /* Chat Apple Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -79,20 +79,17 @@
 /* Begin PBXFileReference section */
 		00C49EC01D78E425005BBD9E /* chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chat.entitlements; sourceTree = "<group>"; };
 		284C242A1E351A86003EE508 /* profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_image.png; sourceTree = SOURCE_ROOT; };
-		28857A731E7ED40800134ABD /* Chat Apple Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat Apple Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28857A761E7ED40800134ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		28857A781E7ED40800134ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		28857A7A1E7ED40800134ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28857A7F1E7ED40800134ABD /* Chat Apple Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Chat Apple Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28857A851E7ED40900134ABD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		28857A861E7ED40900134ABD /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		28857A871E7ED40900134ABD /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		28857A891E7ED40900134ABD /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
-		28857A8A1E7ED40900134ABD /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
-		28857A8C1E7ED40900134ABD /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		28857A8D1E7ED40900134ABD /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		28857A8F1E7ED40900134ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		28857A911E7ED40900134ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28857A9F1E7ED48E00134ABD /* Chat Apple Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat Apple Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28857AA21E7ED48E00134ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		28857AA41E7ED48E00134ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28857AA61E7ED48E00134ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28857AAB1E7ED48E00134ABD /* Chat Apple Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Chat Apple Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28857AB11E7ED48F00134ABD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		28857AB21E7ED48F00134ABD /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		28857AB41E7ED48F00134ABD /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		28857AB61E7ED48F00134ABD /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		28857AB81E7ED48F00134ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28857ABA1E7ED48F00134ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E1EFE71DD3F466008BF413 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chat/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		28E1EFE81DD3F466008BF413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chat/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		28E1EFEE1DD3F466008BF413 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatInputContainerView.swift; path = Chat/ChatInputContainerView.swift; sourceTree = SOURCE_ROOT; };
@@ -116,7 +113,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		28857A7C1E7ED40800134ABD /* Frameworks */ = {
+		28857AA81E7ED48E00134ABD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,36 +139,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28857A741E7ED40800134ABD /* Chat Apple Watch */ = {
+		28857AA01E7ED48E00134ABD /* Chat Apple Watch */ = {
 			isa = PBXGroup;
 			children = (
-				28857A751E7ED40800134ABD /* Interface.storyboard */,
-				28857A781E7ED40800134ABD /* Assets.xcassets */,
-				28857A7A1E7ED40800134ABD /* Info.plist */,
+				28857AA11E7ED48E00134ABD /* Interface.storyboard */,
+				28857AA41E7ED48E00134ABD /* Assets.xcassets */,
+				28857AA61E7ED48E00134ABD /* Info.plist */,
 			);
 			path = "Chat Apple Watch";
 			sourceTree = "<group>";
 		};
-		28857A831E7ED40900134ABD /* Chat Apple Watch Extension */ = {
+		28857AAF1E7ED48F00134ABD /* Chat Apple Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				28857A861E7ED40900134ABD /* InterfaceController.h */,
-				28857A871E7ED40900134ABD /* InterfaceController.m */,
-				28857A891E7ED40900134ABD /* ExtensionDelegate.h */,
-				28857A8A1E7ED40900134ABD /* ExtensionDelegate.m */,
-				28857A8C1E7ED40900134ABD /* NotificationController.h */,
-				28857A8D1E7ED40900134ABD /* NotificationController.m */,
-				28857A8F1E7ED40900134ABD /* Assets.xcassets */,
-				28857A911E7ED40900134ABD /* Info.plist */,
-				28857A841E7ED40900134ABD /* Supporting Files */,
+				28857AB21E7ED48F00134ABD /* InterfaceController.swift */,
+				28857AB41E7ED48F00134ABD /* ExtensionDelegate.swift */,
+				28857AB61E7ED48F00134ABD /* NotificationController.swift */,
+				28857AB81E7ED48F00134ABD /* Assets.xcassets */,
+				28857ABA1E7ED48F00134ABD /* Info.plist */,
+				28857AB01E7ED48F00134ABD /* Supporting Files */,
 			);
 			path = "Chat Apple Watch Extension";
 			sourceTree = "<group>";
 		};
-		28857A841E7ED40900134ABD /* Supporting Files */ = {
+		28857AB01E7ED48F00134ABD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				28857A851E7ED40900134ABD /* PushNotificationPayload.apns */,
+				28857AB11E7ED48F00134ABD /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -235,8 +229,8 @@
 			children = (
 				00C49EC01D78E425005BBD9E /* chat.entitlements */,
 				C7A24D7F1D1E45DF00011542 /* Chat */,
-				28857A741E7ED40800134ABD /* Chat Apple Watch */,
-				28857A831E7ED40900134ABD /* Chat Apple Watch Extension */,
+				28857AA01E7ED48E00134ABD /* Chat Apple Watch */,
+				28857AAF1E7ED48F00134ABD /* Chat Apple Watch Extension */,
 				C7A24D7E1D1E45DF00011542 /* Products */,
 				774725568B8883F566F68AE0 /* Pods */,
 				1A069B2ABDAD4A5F53585FCE /* Frameworks */,
@@ -247,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				C7A24D7D1D1E45DF00011542 /* chat.app */,
-				28857A731E7ED40800134ABD /* Chat Apple Watch.app */,
-				28857A7F1E7ED40800134ABD /* Chat Apple Watch Extension.appex */,
+				28857A9F1E7ED48E00134ABD /* Chat Apple Watch.app */,
+				28857AAB1E7ED48E00134ABD /* Chat Apple Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,30 +262,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28857A721E7ED40800134ABD /* Chat Apple Watch */ = {
+		28857A9E1E7ED48E00134ABD /* Chat Apple Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28857A9B1E7ED40900134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch" */;
+			buildConfigurationList = 28857AC21E7ED48F00134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch" */;
 			buildPhases = (
-				28857A711E7ED40800134ABD /* Resources */,
-				28857A9A1E7ED40900134ABD /* Embed App Extensions */,
+				28857A9D1E7ED48E00134ABD /* Resources */,
+				28857AC11E7ED48F00134ABD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				28857A821E7ED40900134ABD /* PBXTargetDependency */,
+				28857AAE1E7ED48F00134ABD /* PBXTargetDependency */,
 			);
 			name = "Chat Apple Watch";
 			productName = "Chat Apple Watch";
-			productReference = 28857A731E7ED40800134ABD /* Chat Apple Watch.app */;
+			productReference = 28857A9F1E7ED48E00134ABD /* Chat Apple Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		28857A7E1E7ED40800134ABD /* Chat Apple Watch Extension */ = {
+		28857AAA1E7ED48E00134ABD /* Chat Apple Watch Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28857A991E7ED40900134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch Extension" */;
+			buildConfigurationList = 28857ABE1E7ED48F00134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch Extension" */;
 			buildPhases = (
-				28857A7B1E7ED40800134ABD /* Sources */,
-				28857A7C1E7ED40800134ABD /* Frameworks */,
-				28857A7D1E7ED40800134ABD /* Resources */,
+				28857AA71E7ED48E00134ABD /* Sources */,
+				28857AA81E7ED48E00134ABD /* Frameworks */,
+				28857AA91E7ED48E00134ABD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -299,7 +293,7 @@
 			);
 			name = "Chat Apple Watch Extension";
 			productName = "Chat Apple Watch Extension";
-			productReference = 28857A7F1E7ED40800134ABD /* Chat Apple Watch Extension.appex */;
+			productReference = 28857AAB1E7ED48E00134ABD /* Chat Apple Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		C7A24D7C1D1E45DF00011542 /* chat */ = {
@@ -317,7 +311,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				28857A931E7ED40900134ABD /* PBXTargetDependency */,
+				28857ABC1E7ED48F00134ABD /* PBXTargetDependency */,
 			);
 			name = chat;
 			productName = gameofchats;
@@ -330,16 +324,16 @@
 		C7A24D751D1E45DF00011542 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = letsbuildthatapp;
 				TargetAttributes = {
-					28857A721E7ED40800134ABD = {
+					28857A9E1E7ED48E00134ABD = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8NZ8K5GNH8;
 						ProvisioningStyle = Automatic;
 					};
-					28857A7E1E7ED40800134ABD = {
+					28857AAA1E7ED48E00134ABD = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8NZ8K5GNH8;
 						ProvisioningStyle = Automatic;
@@ -373,27 +367,27 @@
 			projectRoot = "";
 			targets = (
 				C7A24D7C1D1E45DF00011542 /* chat */,
-				28857A721E7ED40800134ABD /* Chat Apple Watch */,
-				28857A7E1E7ED40800134ABD /* Chat Apple Watch Extension */,
+				28857A9E1E7ED48E00134ABD /* Chat Apple Watch */,
+				28857AAA1E7ED48E00134ABD /* Chat Apple Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		28857A711E7ED40800134ABD /* Resources */ = {
+		28857A9D1E7ED48E00134ABD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28857A791E7ED40800134ABD /* Assets.xcassets in Resources */,
-				28857A771E7ED40800134ABD /* Interface.storyboard in Resources */,
+				28857AA51E7ED48E00134ABD /* Assets.xcassets in Resources */,
+				28857AA31E7ED48E00134ABD /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		28857A7D1E7ED40800134ABD /* Resources */ = {
+		28857AA91E7ED48E00134ABD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28857A901E7ED40900134ABD /* Assets.xcassets in Resources */,
+				28857AB91E7ED48F00134ABD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,13 +454,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		28857A7B1E7ED40800134ABD /* Sources */ = {
+		28857AA71E7ED48E00134ABD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28857A8B1E7ED40900134ABD /* ExtensionDelegate.m in Sources */,
-				28857A881E7ED40900134ABD /* InterfaceController.m in Sources */,
-				28857A8E1E7ED40900134ABD /* NotificationController.m in Sources */,
+				28857AB71E7ED48F00134ABD /* NotificationController.swift in Sources */,
+				28857AB51E7ED48F00134ABD /* ExtensionDelegate.swift in Sources */,
+				28857AB31E7ED48F00134ABD /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,23 +485,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		28857A821E7ED40900134ABD /* PBXTargetDependency */ = {
+		28857AAE1E7ED48F00134ABD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 28857A7E1E7ED40800134ABD /* Chat Apple Watch Extension */;
-			targetProxy = 28857A811E7ED40900134ABD /* PBXContainerItemProxy */;
+			target = 28857AAA1E7ED48E00134ABD /* Chat Apple Watch Extension */;
+			targetProxy = 28857AAD1E7ED48F00134ABD /* PBXContainerItemProxy */;
 		};
-		28857A931E7ED40900134ABD /* PBXTargetDependency */ = {
+		28857ABC1E7ED48F00134ABD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 28857A721E7ED40800134ABD /* Chat Apple Watch */;
-			targetProxy = 28857A921E7ED40900134ABD /* PBXContainerItemProxy */;
+			target = 28857A9E1E7ED48E00134ABD /* Chat Apple Watch */;
+			targetProxy = 28857ABB1E7ED48F00134ABD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		28857A751E7ED40800134ABD /* Interface.storyboard */ = {
+		28857AA11E7ED48E00134ABD /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				28857A761E7ED40800134ABD /* Base */,
+				28857AA21E7ED48E00134ABD /* Base */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -531,73 +525,81 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		28857A951E7ED40900134ABD /* Debug */ = {
+		28857ABF1E7ED48F00134ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
-				IBSC_MODULE = Chat_Apple_Watch_Extension;
-				INFOPLIST_FILE = "Chat Apple Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Chat Apple Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
-		28857A961E7ED40900134ABD /* Release */ = {
+		28857AC01E7ED48F00134ABD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
-				IBSC_MODULE = Chat_Apple_Watch_Extension;
-				INFOPLIST_FILE = "Chat Apple Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Chat Apple Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
-		28857A971E7ED40900134ABD /* Debug */ = {
+		28857AC31E7ED48F00134ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
-				INFOPLIST_FILE = "Chat Apple Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				IBSC_MODULE = Chat_Apple_Watch_Extension;
+				INFOPLIST_FILE = "Chat Apple Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
-		28857A981E7ED40900134ABD /* Release */ = {
+		28857AC41E7ED48F00134ABD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
-				INFOPLIST_FILE = "Chat Apple Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				IBSC_MODULE = Chat_Apple_Watch_Extension;
+				INFOPLIST_FILE = "Chat Apple Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.chat.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
@@ -729,19 +731,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28857A991E7ED40900134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch Extension" */ = {
+		28857ABE1E7ED48F00134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28857A971E7ED40900134ABD /* Debug */,
-				28857A981E7ED40900134ABD /* Release */,
+				28857ABF1E7ED48F00134ABD /* Debug */,
+				28857AC01E7ED48F00134ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		28857A9B1E7ED40900134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch" */ = {
+		28857AC21E7ED48F00134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28857A951E7ED40900134ABD /* Debug */,
-				28857A961E7ED40900134ABD /* Release */,
+				28857AC31E7ED48F00134ABD /* Debug */,
+				28857AC41E7ED48F00134ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
