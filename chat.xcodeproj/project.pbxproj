@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		284C242B1E351A86003EE508 /* profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 284C242A1E351A86003EE508 /* profile_image.png */; };
 		28857AA31E7ED48E00134ABD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28857AA11E7ED48E00134ABD /* Interface.storyboard */; };
 		28857AA51E7ED48E00134ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28857AA41E7ED48E00134ABD /* Assets.xcassets */; };
 		28857AAC1E7ED48F00134ABD /* Chat Apple Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28857AAB1E7ED48E00134ABD /* Chat Apple Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -77,8 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00BB53A11F2EBD5400F7E7C8 /* profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_image.png; path = Chat/profile_image.png; sourceTree = SOURCE_ROOT; };
 		00C49EC01D78E425005BBD9E /* chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chat.entitlements; sourceTree = "<group>"; };
-		284C242A1E351A86003EE508 /* profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_image.png; sourceTree = SOURCE_ROOT; };
 		28857A9F1E7ED48E00134ABD /* Chat Apple Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat Apple Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28857AA21E7ED48E00134ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		28857AA41E7ED48E00134ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +113,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		28857AA81E7ED48E00134ABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67FE14BF2C6B10B40D64763C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,7 +179,7 @@
 		28E1F00C1DD3F49A008BF413 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				284C242A1E351A86003EE508 /* profile_image.png */,
+				00BB53A11F2EBD5400F7E7C8 /* profile_image.png */,
 				28E1EFE71DD3F466008BF413 /* AppDelegate.swift */,
 				28E1EFE81DD3F466008BF413 /* Assets.xcassets */,
 				28E1EFF21DD3F466008BF413 /* GoogleService-Info.plist */,
@@ -268,6 +274,7 @@
 			buildPhases = (
 				28857A9D1E7ED48E00134ABD /* Resources */,
 				28857AC11E7ED48F00134ABD /* Embed App Extensions */,
+				67FE14BF2C6B10B40D64763C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,7 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E1F0031DD3F467008BF413 /* GoogleService-Info.plist in Resources */,
-				284C242B1E351A86003EE508 /* profile_image.png in Resources */,
 				28E1F0121DD3F4B4008BF413 /* Main.storyboard in Resources */,
 				28E1F0111DD3F4B4008BF413 /* LaunchScreen.storyboard in Resources */,
 				28E1EFFC1DD3F467008BF413 /* Assets.xcassets in Resources */,
@@ -738,6 +744,7 @@
 				28857AC01E7ED48F00134ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28857AC21E7ED48F00134ABD /* Build configuration list for PBXNativeTarget "Chat Apple Watch" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +753,7 @@
 				28857AC41E7ED48F00134ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7A24D781D1E45DF00011542 /* Build configuration list for PBXProject "chat" */ = {
 			isa = XCConfigurationList;
