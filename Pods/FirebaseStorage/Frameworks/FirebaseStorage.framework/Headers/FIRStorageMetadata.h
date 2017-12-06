@@ -1,11 +1,18 @@
-// clang-format off
-/** @file FIRStorageMetadata.h
-    @brief Firebase SDK
-    @copyright Copyright 2016 Google Inc.
-    @remarks Use of this SDK is subject to the Google APIs Terms of Service:
-    https://developers.google.com/terms/
+/*
+ * Copyright 2017 Google
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-// clang-format on
 
 #import <Foundation/Foundation.h>
 
@@ -20,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
  * Objects#resource docs.
  * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
  */
-@interface FIRStorageMetadata : NSObject<NSCopying>
+NS_SWIFT_NAME(StorageMetadata)
+@interface FIRStorageMetadata : NSObject <NSCopying>
 
 /**
  * The name of the bucket containing this object.
@@ -51,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
  * Content-Type of the object data.
  */
 @property(copy, nonatomic, nullable) NSString *contentType;
+
+/**
+ * MD5 hash of the data; encoded using base64.
+ */
+@property(copy, nonatomic, nullable, readonly) NSString *md5Hash;
 
 /**
  * The content generation of this object. Used for object versioning.
@@ -108,13 +121,14 @@ NS_ASSUME_NONNULL_BEGIN
  * Creates an instanece of FIRStorageMetadata from the contents of a dictionary.
  * @return An instance of FIRStorageMetadata that represents the contents of a dictionary.
  */
-- (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithDictionary:(NSDictionary<NSString *, id> *)dictionary
+    NS_DESIGNATED_INITIALIZER;
 
 /**
  * Creates an NSDictionary from the contents of the metadata.
  * @return An NSDictionary that represents the contents of the metadata.
  */
-- (NSDictionary *)dictionaryRepresentation;
+- (NSDictionary<NSString *, id> *)dictionaryRepresentation;
 
 /**
  * Determines if the current metadata represents a "file".
