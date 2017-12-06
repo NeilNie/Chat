@@ -1,11 +1,18 @@
-// clang-format off
-/** @file FIRStorage.h
-    @brief Firebase SDK
-    @copyright Copyright 2016 Google Inc.
-    @remarks Use of this SDK is subject to the Google APIs Terms of Service:
-    https://developers.google.com/terms/
+/*
+ * Copyright 2017 Google
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-// clang-format on
 
 #import <Foundation/Foundation.h>
 
@@ -17,7 +24,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /** Project version string for FirebaseStorage. */
-FOUNDATION_EXPORT const unsigned char *const FirebaseStorageVersionString;
+FOUNDATION_EXPORT const unsigned char *const FIRStorageVersionString;
 
 /**
  * FirebaseStorage is a service that supports uploading and downloading binary objects,
@@ -30,6 +37,7 @@ FOUNDATION_EXPORT const unsigned char *const FirebaseStorageVersionString;
  * If you call [FIRStorage storageForApp:] and provide a custom instance of FIRApp,
  * the storage location will be specified via the FIROptions#storageBucket property.
  */
+NS_SWIFT_NAME(Storage)
 @interface FIRStorage : NSObject
 
 /**
@@ -59,8 +67,7 @@ FOUNDATION_EXPORT const unsigned char *const FirebaseStorageVersionString;
  * @param url The gs:// url to your Firebase Storage Bucket.
  * @return the FIRStorage instance, initialized with the custom FIRApp.
  */
-+ (instancetype)storageForApp:(FIRApp *)app
-                          URL:(NSString *)url NS_SWIFT_NAME(storage(app:url:));
++ (instancetype)storageForApp:(FIRApp *)app URL:(NSString *)url NS_SWIFT_NAME(storage(app:url:));
 
 /**
  * The Firebase App associated with this Firebase Storage instance.
