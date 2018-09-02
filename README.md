@@ -3,7 +3,7 @@ Swift texting app 📱 with Firebase server.
 
 ## Introduction:
 
-Clone/download this app. First register as a user.
+[Clone/download](https://github.com/NeilNie/Chat/archive/master.zip) this app. First register as a user.
 
 Register             |  Begin a chat
 :-------------------------:|:-------------------------:
@@ -25,11 +25,11 @@ View your conversations          |  Have a conversation
 - Update user information, including profile images. 
 
 ### Firebase 
-The app is built with Firebase, a mobile backend solution by Google. My first messenging app used Parse, as many of you know, parse is a thing of the past. In fact, Firebase is fast and easy to implement. If you decide to use or develop this app, I would highly recommend you to read Firebase's 👉 [documentation](https://firebase.google.com/docs/ios/setup) and also create a Firebase account. 
+The app is built with [Firebase](https://firebase.google.com), a mobile backend solution by Google. My first messenging app used Parse, as many of you know, parse is a thing of the past. In fact, Firebase is fast and easy to implement. If you decide to use or develop this app, I would highly recommend you to read Firebase's 👉 [documentation](https://firebase.google.com/docs/ios/setup) and also create a Firebase account. 
 
 ## Build it together
 
-Clone or download the project. Make you that you have a firebase account and update Google info.plist. This repository is also a great resource for starting a firebase project. 😀
+[Clone or download](https://github.com/harens/Chat/archive/master.zip) the project. Make you that you have a firebase account and update Google info.plist. This repository is also a great resource for starting a firebase project. 😀
 
 For more details, feel free to email me at 📮appledeveloper.neil@gmail.com.
 
@@ -39,5 +39,5 @@ For more details, feel free to email me at 📮appledeveloper.neil@gmail.com.
 - voice call and video call 📞📲
 
 ### Thanks to
-http://letsbuildthatapp.com <br>
+http://letsbuildthatapp.com
 Google

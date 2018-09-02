@@ -38,10 +38,13 @@ Firebase services work as intended."
     #import <FirebaseFunctions/FirebaseFunctions.h>
   #endif
 
+<<<<<<< HEAD:Pods/Firebase/CoreOnly/Sources/Firebase.h
   #if __has_include(<FirebaseInAppMessaging/FirebaseInAppMessaging.h>)
     #import <FirebaseInAppMessaging/FirebaseInAppMessaging.h>
   #endif
 
+=======
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27:Pods/Firebase/CoreOnly/Sources/Firebase.h
   #if __has_include(<FirebaseInstanceID/FirebaseInstanceID.h>)
     #import <FirebaseInstanceID/FirebaseInstanceID.h>
   #endif

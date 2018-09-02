@@ -43,7 +43,11 @@ NSString *const kFIRIsSignInEnabled = @"IS_SIGNIN_ENABLED";
 NSString *const kFIRLibraryVersionID =
     @"5"     // Major version (one or more digits)
     @"01"    // Minor version (exactly 2 digits)
+<<<<<<< HEAD
     @"02"    // Build number (exactly 2 digits)
+=======
+    @"00"    // Build number (exactly 2 digits)
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
     @"000";  // Fixed "000"
 // Plist file name.
 NSString *const kServiceInfoFileName = @"GoogleService-Info";

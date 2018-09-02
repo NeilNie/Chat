@@ -24,7 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
         registered for any given host/key pair, and the object shall be created on-the-fly when
         asked for.
  */
+<<<<<<< HEAD
 @interface FIRAppAssociationRegistration<ObjectType> : NSObject
+=======
+@interface FIRAppAssociationRegistration <ObjectType> : NSObject
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
 
 /** @fn registeredObjectWithHost:key:creationBlock:
     @brief Retrieves the registered object with a particular host and key.

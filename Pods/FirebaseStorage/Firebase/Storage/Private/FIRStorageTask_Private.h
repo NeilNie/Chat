@@ -62,7 +62,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(readonly, nonatomic) GTMSessionFetcherService *fetcherService;
 
+<<<<<<< HEAD
 @property(readonly, copy) GTMSessionFetcherCompletionHandler fetcherCompletion;
+=======
+@property(readonly) GTMSessionFetcherCompletionHandler fetcherCompletion;
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
 
 /**
  * Creates a new FIRStorageTask initialized with a FIRStorageReference and GTMSessionFetcherService.

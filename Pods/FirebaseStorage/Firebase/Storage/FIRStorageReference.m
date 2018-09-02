@@ -272,9 +272,16 @@
             handler:^(FIRStorageTaskSnapshot *_Nonnull snapshot) {
               FIRStorageDownloadTask *task = snapshot.task;
               if (task.progress.totalUnitCount > size || task.progress.completedUnitCount > size) {
+<<<<<<< HEAD
                 NSDictionary *infoDictionary =
                     @{@"totalSize" : @(task.progress.totalUnitCount),
                       @"maxAllowedSize" : @(size)};
+=======
+                NSDictionary *infoDictionary = @{
+                  @"totalSize" : @(task.progress.totalUnitCount),
+                  @"maxAllowedSize" : @(size)
+                };
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
                 NSError *error =
                     [FIRStorageErrors errorWithCode:FIRStorageErrorCodeDownloadSizeExceeded
                                      infoDictionary:infoDictionary];

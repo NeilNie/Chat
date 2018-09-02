@@ -325,15 +325,22 @@ static NSMutableDictionary *sLibraryVersions;
     return NO;
   }
 
+<<<<<<< HEAD
 #if TARGET_OS_IOS
+=======
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
   // Initialize the Analytics once there is a valid options under default app. Analytics should
   // always initialize first by itself before the other SDKs.
   if ([self.name isEqualToString:kFIRDefaultAppName]) {
     Class firAnalyticsClass = NSClassFromString(@"FIRAnalytics");
     if (!firAnalyticsClass) {
+<<<<<<< HEAD
       FIRLogWarning(kFIRLoggerCore, @"I-COR000022",
                     @"Firebase Analytics is not available. To add it, include Firebase/Core in the "
                     @"Podfile or add FirebaseAnalytics.framework to the Link Build Phase");
+=======
+      FIRLogError(kFIRLoggerCore, @"I-COR000022", @"Firebase Analytics is not available.");
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
     } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
@@ -349,8 +356,11 @@ static NSMutableDictionary *sLibraryVersions;
       }
     }
   }
+<<<<<<< HEAD
 #endif
 
+=======
+>>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
   return YES;
 }
 
