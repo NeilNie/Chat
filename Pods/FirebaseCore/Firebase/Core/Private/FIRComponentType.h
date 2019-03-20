@@ -23,20 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// Do not use directly. A placeholder type in order to provide a macro that will warn users of
 /// mis-matched protocols.
 NS_SWIFT_NAME(ComponentType)
-<<<<<<< HEAD
 @interface FIRComponentType<__covariant T> : NSObject
 
 /// Do not use directly. A factory method to retrieve an instance that provides a specific
 /// functionality.
 + (T)instanceForProtocol:(Protocol *)protocol inContainer:(FIRComponentContainer *)container;
-=======
-@interface FIRComponentType <__covariant T> : NSObject
-
-/// Do not use directly. A factory method to retrieve an instance that provides a specific
-/// functionality.
-+ (T)instanceForProtocol:(Protocol *)protocol
-             inContainer:(FIRComponentContainer *)container;
->>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27
 
 @end
 

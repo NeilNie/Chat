@@ -38,13 +38,10 @@ Firebase services work as intended."
     #import <FirebaseFunctions/FirebaseFunctions.h>
   #endif
 
-<<<<<<< HEAD:Pods/Firebase/CoreOnly/Sources/Firebase.h
   #if __has_include(<FirebaseInAppMessaging/FirebaseInAppMessaging.h>)
     #import <FirebaseInAppMessaging/FirebaseInAppMessaging.h>
   #endif
 
-=======
->>>>>>> 8fd09ebddbeafcf137120b4b65f6c27b607cec27:Pods/Firebase/CoreOnly/Sources/Firebase.h
   #if __has_include(<FirebaseInstanceID/FirebaseInstanceID.h>)
     #import <FirebaseInstanceID/FirebaseInstanceID.h>
   #endif
@@ -59,6 +56,18 @@ Firebase services work as intended."
 
   #if __has_include(<FirebaseMLModelInterpreter/FirebaseMLModelInterpreter.h>)
     #import <FirebaseMLModelInterpreter/FirebaseMLModelInterpreter.h>
+  #endif
+
+  #if __has_include(<FirebaseMLNLLanguageID/FirebaseMLNLLanguageID.h>)
+    #import <FirebaseMLNLLanguageID/FirebaseMLNLLanguageID.h>
+  #endif
+
+  #if __has_include(<FirebaseMLNLSmartReply/FirebaseMLNLSmartReply.h>)
+    #import <FirebaseMLNLSmartReply/FirebaseMLNLSmartReply.h>
+  #endif
+
+  #if __has_include(<FirebaseMLNaturalLanguage/FirebaseMLNaturalLanguage.h>)
+    #import <FirebaseMLNaturalLanguage/FirebaseMLNaturalLanguage.h>
   #endif
 
   #if __has_include(<FirebaseMLVision/FirebaseMLVision.h>)

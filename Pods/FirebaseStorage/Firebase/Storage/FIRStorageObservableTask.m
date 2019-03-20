@@ -31,8 +31,9 @@
 @synthesize state = _state;
 
 - (instancetype)initWithReference:(FIRStorageReference *)reference
-                   fetcherService:(GTMSessionFetcherService *)service {
-  self = [super initWithReference:reference fetcherService:service];
+                   fetcherService:(GTMSessionFetcherService *)service
+                    dispatchQueue:(dispatch_queue_t)queue {
+  self = [super initWithReference:reference fetcherService:service dispatchQueue:queue];
   if (self) {
     _pauseHandlers = [[NSMutableDictionary alloc] init];
     _resumeHandlers = [[NSMutableDictionary alloc] init];
@@ -49,7 +50,6 @@
 - (FIRStorageHandle)observeStatus:(FIRStorageTaskStatus)status
                           handler:(FIRStorageVoidSnapshot)handler {
   FIRStorageVoidSnapshot callback = handler;
-  handler = nil;
 
   // Note: self.snapshot is synchronized
   FIRStorageTaskSnapshot *snapshot = self.snapshot;

@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
     @param user The signed in user reference.
     @param additionalUserInfo The additional user info if available.
  */
-- (nullable instancetype)initWithUser:(FIRUser *)user
+- (nullable instancetype)initWithUser:(nullable FIRUser *)user
                    additionalUserInfo:(nullable FIRAdditionalUserInfo *)additionalUserInfo
     NS_DESIGNATED_INITIALIZER;
 
