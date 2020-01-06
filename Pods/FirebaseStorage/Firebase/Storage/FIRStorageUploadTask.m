@@ -20,7 +20,7 @@
 #import "FIRStorageTask_Private.h"
 #import "FIRStorageUploadTask_Private.h"
 
-#import "GTMSessionUploadFetcher.h"
+#import <GTMSessionFetcher/GTMSessionUploadFetcher.h>
 
 @implementation FIRStorageUploadTask
 
@@ -141,8 +141,6 @@
     // Process fetches
     strongSelf.state = FIRStorageTaskStateRunning;
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-retain-cycles"
     strongSelf->_fetcherCompletion = ^(NSData *_Nullable data, NSError *_Nullable error) {
       // Fire last progress updates
       [self fireHandlersForStatus:FIRStorageTaskStatusProgress snapshot:self.snapshot];
@@ -172,11 +170,12 @@
 
       [self finishTaskWithStatus:FIRStorageTaskStatusSuccess snapshot:self.snapshot];
     };
-#pragma clang diagnostic pop
 
     [strongSelf->_uploadFetcher
         beginFetchWithCompletionHandler:^(NSData *_Nullable data, NSError *_Nullable error) {
-          weakSelf.fetcherCompletion(data, error);
+          if (weakSelf.fetcherCompletion != nil) {
+            weakSelf.fetcherCompletion(data, error);
+          }
         }];
   }];
 }
@@ -196,14 +195,17 @@
   NSError *fileReachabilityError;
   if (![_fileURL checkResourceIsReachableAndReturnError:&fileReachabilityError]) {
     if (outError != NULL) {
-      NSString *description =
+      NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+      userInfo[NSLocalizedDescriptionKey] =
           [NSString stringWithFormat:@"File at URL: %@ is not reachable.", _fileURL.absoluteString];
+
+      if (fileReachabilityError) {
+        userInfo[NSUnderlyingErrorKey] = fileReachabilityError;
+      }
+
       *outError = [NSError errorWithDomain:FIRStorageErrorDomain
                                       code:FIRStorageErrorCodeUnknown
-                                  userInfo:@{
-                                    NSUnderlyingErrorKey : fileReachabilityError,
-                                    NSLocalizedDescriptionKey : description
-                                  }];
+                                  userInfo:userInfo];
     }
 
     return NO;

@@ -1,9 +1,10 @@
 //
 //  ChatMessageCell.swift
-//  gameofchats
+//  Chat - A Simple Swift Messaging App
 //
-//  Created by Brian Voong on 7/12/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
+//  Initially created by Brian Voong on 7/12/16.
+//  Adopted by Neil Nie
+//  Copyright © 2016 Neil Nie All rights reserved.
 //
 
 import UIKit
@@ -153,7 +154,7 @@ class ChatMessageCell: UICollectionViewCell {
 
         //x,y,w,h
 
-            bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8)
+        bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8)
 
         bubbleViewRightAnchor?.isActive = true
 
